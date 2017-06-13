@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>net.3gbywork.Win32API.Net</id>
+    <version>$version$</version>
+    <title>Win32API for c#</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/3gbywork/Win32API.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/3gbywork/Win32API.Net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Win32 c# P/Invoke</tags>
+  </metadata>
+</package>
