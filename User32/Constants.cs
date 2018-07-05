@@ -1,5 +1,7 @@
 ﻿using System;
 
+// ReSharper disable InconsistentNaming
+
 namespace WinApi.Net.User32
 {
     #region Multi-flag constants
@@ -1366,7 +1368,7 @@ namespace WinApi.Net.User32
     }
 
     [Flags]
-    public enum Constants
+    public enum LoadResourceFlags
     {
         /// <summary>
         ///     When the uType parameter specifies IMAGE_BITMAP, causes the function to return a DIB section bitmap rather than a
@@ -5227,6 +5229,28 @@ namespace WinApi.Net.User32
         USER = 0x0400
     }
 
-    #endregion
+    public enum ClipboardFormat : uint
+    {
+        /// <summary>
+        /// A handle to a bitmap (HBITMAP)
+        /// </summary>
+        CF_BITMAP = 2u,
 
+        /// <summary>
+        /// Flag for text-format
+        /// </summary>
+        CF_TEXT = 1u,
+
+        /// <summary>
+        /// Flag for unicode-text-format
+        /// </summary>
+        CF_UNICODETEXT = 13u,
+
+        /// <summary>
+        /// no format
+        /// </summary>
+        CF_ZERO = 0u
+    }
+
+    #endregion
 }

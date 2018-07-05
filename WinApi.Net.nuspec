@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>net.3gbywork.Win32API.Net</id>
+    <id>Net.Liap.Win32API</id>
     <version>$version$</version>
     <title>Win32API for c#</title>
     <authors>$author$</authors>
@@ -10,8 +10,8 @@
     <projectUrl>https://github.com/3gbywork/Win32API.Net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright 2017</copyright>
-    <tags>Win32 c# P/Invoke</tags>
+    <releaseNotes>Change TargetFrameworkVersion to v4.0</releaseNotes>
+    <copyright>Copyright 2017-2018</copyright>
+    <tags>Win32API c# P/Invoke</tags>
   </metadata>
 </package>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using WinApi.Net.Geometry;
 
 namespace WinApi.Net.User32
 {
@@ -12,30 +13,6 @@ namespace WinApi.Net.User32
     public delegate void TimerProc(IntPtr hWnd, uint uMsg, IntPtr nIdEvent, uint dwTickCountMillis);
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct Size : IEquatable<Size>
-    {
-        public int Width { get; set; }
-        public int Height { get; set; }
-
-        public bool Equals(Size other)
-        {
-            return Width.Equals(other.Width) && Height.Equals(other.Height);
-        }
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct Point : IEquatable<Point>
-    {
-        public Int32 X { get; set; }
-        public Int32 Y { get; set; }
-
-        public bool Equals(Point other)
-        {
-            return X.Equals(other.X) && Y.Equals(other.Y);
-        }
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
     public struct Message
     {
         public IntPtr Hwnd;
@@ -44,33 +21,6 @@ namespace WinApi.Net.User32
         public IntPtr LParam;
         public uint Time;
         public Point Point;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct Rectangle : IEquatable<Rectangle>
-    {
-        public Int32 Left { get; set; }
-        public Int32 Top { get; set; }
-        public Int32 Right { get; set; }
-        public Int32 Bottom { get; set; }
-
-        public Int32 Width
-        {
-            get { return Right - Left; }
-        }
-
-        public Int32 Height
-        {
-            get { return Bottom - Top; }
-        }
-
-        public bool Equals(Rectangle other)
-        {
-            return Left.Equals(other.Left) &&
-                Top.Equals(other.Top) &&
-                Right.Equals(other.Right) &&
-                Bottom.Equals(other.Bottom);
-        }
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -93,7 +43,7 @@ namespace WinApi.Net.User32
     /// <summary>
     ///     Note: Marshalled
     /// </summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    [StructLayout(LayoutKind.Sequential, CharSet = Properties.BuildCharSet)]
     public struct WindowClassEx
     {
         public uint Size;
@@ -189,7 +139,7 @@ namespace WinApi.Net.User32
         /// <param name="iMinAnimate">If non-zero and SPI_SETANIMATION is specified, enables minimize/restore animation.</param>
         public AnimationInfo(int iMinAnimate)
         {
-            this.Size = (uint)Marshal.SizeOf<AnimationInfo>();
+            this.Size = (uint)MarshalEx.SizeOf<AnimationInfo>();
             this.MinAnimate = iMinAnimate;
         }
 
